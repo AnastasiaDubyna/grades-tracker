@@ -1,0 +1,36 @@
+{% extends "base_with_subject_selector.html" %}
+
+{% block stylesheets %}
+{{ super() }}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/points.css') }}">
+{% endblock %}
+
+{% block content %}
+{% if subject_name %}
+    {% if tasksheets %}
+    {% for sheet in tasksheets %}
+    <div class="tile small-tile points-tile" data-tasksheet-number = {{sheet.number}}>
+        <p>Task sheet {{sheet.number}}</p>
+        <p>{{sheet.points}}/{{sheet.max_points}}</p>
+        <div class="line-container" data-percent="{{sheet.points * 100 / sheet.max_points}}">
+            <div class="violet-scale-line"></div>
+            <div class="yellow-scale-line"></div>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="placeholder-container">
+        <p>No task sheets here</p>
+    </div>
+    {% endif %}
+{% else %}
+<div class="placeholder-container">
+    <p>No subjects here</p>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{url_for('static', filename='scripts/points.js')}}"></script>
+{% endblock %}

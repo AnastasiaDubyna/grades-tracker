@@ -1,0 +1,45 @@
+.tile {
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+}
+
+.biggest-tile {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.08));
+  width: 99%;
+  height: 98%;
+  display: flex;
+  flex-flow: column;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+}
+.biggest-tile::-webkit-scrollbar {
+  display: none;
+}
+
+.form-tile {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.1));
+  width: 828px;
+  height: auto;
+}
+
+.medium-tile {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.1));
+  width: 533px;
+  height: 437px;
+}
+
+.small-tile {
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.1));
+  width: 216px;
+  height: 216px;
+}
+
+.selector-tile {
+  background-color: rgba(35, 25, 25, 0.8);
+  height: auto;
+  z-index: 1;
+}
+
+/*# sourceMappingURL=tile.css.map */

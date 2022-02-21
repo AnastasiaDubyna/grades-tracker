@@ -1,0 +1,49 @@
+$border: 1px solid rgba(255, 255, 255, 0.20);
+$outerTileBackground: linear-gradient(to bottom right, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.08));
+$innerTileBackground: linear-gradient(to bottom right, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.10));
+
+.tile {
+  width: 200px;
+  height: 200px;
+  border: $border;
+  border-radius: 25px;
+}
+
+.biggest-tile {
+  background-image: $outerTileBackground;
+  width: 99%;
+  height: 98%;
+  display: flex;
+  flex-flow: column;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.form-tile {
+  background-image: $innerTileBackground;
+  width: 828px;
+  height: auto;
+}
+
+.medium-tile {
+  background-image: $innerTileBackground;
+  width: 533px;
+  height: 437px;
+}
+
+.small-tile {
+  background-image: $innerTileBackground;
+  width: 216px;
+  height: 216px;
+}
+
+.selector-tile {
+  background-color: rgba(35, 25, 25, 0.8);
+  height: auto;
+  z-index: 1;
+}
+

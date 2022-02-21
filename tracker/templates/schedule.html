@@ -1,0 +1,54 @@
+{% extends "base_with_term_selector.html" %}
+
+
+{% block stylesheets %}
+{{ super() }}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/schedule.css') }}">
+{% endblock %}
+
+{% block term_selector %}
+{{ super() }}
+{% endblock %}
+
+{% block add_new_button %}
+<button id="edit-schedule-button" class="orange-button">Edit</button>
+{% endblock %}
+
+{% block subject_selector %}
+{% endblock %}
+
+{% block content %}
+<div class="days-names-container">
+    {% for day in ["monday", "tuesday", "wednesday", "thursday", "friday"] %}
+    <div class="day-name-container">
+        <span class="day">{{day.title()}}</span>
+    </div>
+    {% endfor %}
+</div>
+<div class="wrapper-container">
+    <div class="timeline-container">
+        <div class="timeline violet-scale-line"></div>
+        <div class="timeline yellow-scale-line"></div>
+        <div class="main-time-container">
+            {% for i in range(8, 21, 2) %}
+            <div class="single-time-container">
+                <span class="time">{{i}}:00</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="subjects-container">
+        {% for schedule in schedules %}
+        <div class="subject tile small-tile" data-day="{{schedule.day}}" data-time="{{schedule.time}}" data-duration="{{schedule.duration}}">
+            <p class="name">{{schedule.subject_name}}</p>
+            <p class="type">{{schedule.type.replace("_", " ").title()}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{url_for('static', filename='scripts/schedule.js')}}"></script>
+{% endblock %}

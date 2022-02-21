@@ -1,0 +1,21 @@
+.form-tile {
+  padding: 43px;
+  width: 587px;
+  height: auto;
+
+  input {
+    margin-bottom: 37px;
+  }
+}
+
+.buttons-container {
+  gap: 18px;
+  display: flex;
+  justify-content: center;
+  width: 587px;
+
+  .orange-button {
+    width: 20%;
+  }
+}
+

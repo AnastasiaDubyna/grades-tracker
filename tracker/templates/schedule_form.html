@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/schedule_form.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <form class="form-tile tile" data-subject-name="">
+        <div class="all-inputs-container">
+        {% for item in ["lecture", "exercise_session", "lab"] %}
+            <div class="input-container">
+                <p>{{item.replace("_", " ").title()}}</p>
+                <div>
+                    <input id="{{item}}-day-name" class="day-name-input" name="day-name" data-type="{{item}}" placeholder="Day">
+                    <input id="{{item}}-time" class="time-input" name="time" data-type="{{item}}" placeholder="Start time">
+                    <input id="{{item}}-duration" class="duration-input" name="duration" data-type="{{item}}" placeholder="Duration">
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="message-container"></div>
+    </form>
+    <button id="submit-schedule-button" class="orange-button pointer">Submit</button>
+</div>
+<div id="subjects-list-container" class="pointer">
+    {% for subject in subjects %}
+    <p class="subject-name">{{subject.name}}</p>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('static', filename='scripts/scheduleForm.js')}}"></script>
+{% endblock %}

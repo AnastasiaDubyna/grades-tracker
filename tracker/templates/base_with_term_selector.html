@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/term_selector.css') }}">
+{% endblock %}
+
+{% block term_selector %}
+<div class="term-selector-container pointer" data-term-number="{{term.number}}">
+    <p id="term-header">{{term|string}}</p>
+    <div class="term-selector-options invisible pointer"></div>
+</div>
+{% endblock %}
+
+{% block add_new_button %}
+<button data-add-new="{{add_new}}" class="orange-button add-new-button pointer">Add new {{add_new}}</button>
+{% endblock %}
+
+{% block subject_selector %}
+{% endblock %}
+
+
+{% block content %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('static', filename='scripts/termSelector.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,20 @@
+.form-tile {
+  padding: 43px;
+  width: 587px;
+  height: auto;
+}
+.form-tile input {
+  margin-bottom: 37px;
+}
+
+.buttons-container {
+  gap: 18px;
+  display: flex;
+  justify-content: center;
+  width: 587px;
+}
+.buttons-container .orange-button {
+  width: 20%;
+}
+
+/*# sourceMappingURL=tasksheet_form.css.map */

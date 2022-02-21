@@ -1,0 +1,32 @@
+.navigation-bar {
+  width: calc(99% - 2px);
+  height: 87px;
+  background-color: #41106B;
+  border-radius: 25px 25px 0 0;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+}
+.navigation-bar .button-container {
+  height: 100%;
+  width: 183px;
+  display: grid;
+}
+.navigation-bar .button-container .nav-button {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 22px;
+  grid-area: 1/1;
+}
+.navigation-bar .button-container .active-border {
+  height: 4px;
+  background-color: #FF5762;
+  box-shadow: 0 3px 10px #FF5762;
+  grid-area: 1/1;
+  display: none;
+}
+
+/*# sourceMappingURL=navigation.css.map */

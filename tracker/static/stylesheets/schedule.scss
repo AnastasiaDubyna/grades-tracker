@@ -1,0 +1,91 @@
+.content-container {
+  padding-bottom: 15px;
+}
+
+.timeline-container {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: stretch;
+  column-gap: 6px;
+  position: relative;
+
+  .timeline {
+    width: 5px;
+  }
+
+  .main-time-container {
+
+    .single-time-container {
+      height: 180px;
+
+      &:last-child {
+        height: auto;
+      }
+    }
+  }
+
+}
+.wrapper-container {
+  display: flex;
+
+  .subjects-container {
+    display: grid;
+    height: 1099px;
+    width: 96%;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: 10px;
+
+    .subject {
+
+      .name {
+        font-size: 22px;
+        margin-bottom: 5px;
+        letter-spacing: 4px;
+      }
+    }
+  }
+}
+
+.days-names-container {
+  display: flex;
+  margin-left: 81px;
+  margin-bottom: 20px;
+
+  .day-name-container {
+    width: calc(100% / 5);
+    text-align: center;
+
+    span {
+      font-size: 22px;
+    }
+  }
+}
+
+
+
+#edit-schedule-button {
+  width: 233px;
+  height: 63px;
+}
+
+.small-tile {
+  width: auto;
+  height: auto;
+  margin: 5px;
+  padding: 25px;
+}
+
+.violet-scale-line {
+  height: inherit;
+}
+
+.yellow-scale-line {
+  position: absolute;
+  height: 500px;
+  top: 8px;
+}
+
+
+

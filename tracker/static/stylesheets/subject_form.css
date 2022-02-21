@@ -1,0 +1,79 @@
+.content-container {
+  left: calc(50% - 414px);
+  width: auto;
+}
+
+form {
+  padding: 43px;
+  position: relative;
+}
+form input {
+  margin-bottom: 37px;
+}
+form .grades-rates-container {
+  display: flex;
+  gap: 39px;
+}
+form .grades-rates-container .percent-container {
+  display: flex;
+}
+form .grades-rates-container .percent-container :first-child {
+  margin-right: 17px;
+}
+form .grades-rates-container .percent-container :nth-child(2) {
+  margin-right: 10px;
+}
+form .grades-rates-container .percent-container input {
+  width: 35px;
+}
+form p {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+::placeholder {
+  color: #ddd9e2;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.checkboxes-container {
+  display: flex;
+  gap: 47px;
+}
+.checkboxes-container .checkbox-container {
+  display: flex;
+  gap: 22px;
+}
+.checkboxes-container .checkbox-container .checkbox {
+  width: 26px;
+  height: 26px;
+  border: 1px solid rgba(255, 255, 255, 0.47);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-container {
+  width: 828px;
+  gap: 18px;
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;
+}
+
+.orange-button {
+  width: 20%;
+}
+
+.terms-selector {
+  position: absolute;
+  width: calc(90% - 3px);
+  border-radius: 0 0 25px 25px;
+  top: 47%;
+  padding: 20px 41px;
+  margin-left: 0;
+}
+
+/*# sourceMappingURL=subject_form.css.map */

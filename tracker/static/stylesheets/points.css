@@ -1,0 +1,24 @@
+.content-container {
+  display: grid;
+  left: 66px;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items: start;
+  row-gap: 41px;
+  width: calc(100% - 132px);
+  column-gap: 41px;
+}
+.content-container .points-tile {
+  padding: 28px 20px;
+}
+.content-container .points-tile p:first-child {
+  font-size: 23px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.content-container .points-tile p:nth-child(2) {
+  font-size: 32px;
+  text-align: center;
+  margin: 38px 0;
+}
+
+/*# sourceMappingURL=points.css.map */

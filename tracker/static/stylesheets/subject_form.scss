@@ -1,0 +1,95 @@
+$orange: #FF7078;
+$border-color: rgba(255, 255, 255, 0.47);
+
+.content-container {
+  left: calc(50% - 828px / 2);
+  width: auto;
+}
+
+
+form {
+  padding: 43px;
+  position: relative;
+
+  input {
+    margin-bottom: 37px;
+  }
+
+  .grades-rates-container {
+    display: flex;
+    gap: 39px;
+
+
+    .percent-container {
+      display: flex;
+
+      :first-child {
+        margin-right: 17px;
+      }
+
+      :nth-child(2) {
+        margin-right: 10px;
+      }
+
+      input {
+        width: 35px;
+      }
+    }
+  }
+  p {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+  }
+}
+
+
+::placeholder {
+  color: rgb(221, 217, 226);
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.checkboxes-container {
+  display: flex;
+  gap: 47px;
+
+  .checkbox-container {
+    display: flex;
+    gap: 22px;
+
+    .checkbox {
+      width: 26px;
+      height: 26px;
+      border: 1px solid $border-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+
+.buttons-container {
+  width: 828px;
+  gap: 18px;
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;
+}
+
+.orange-button {
+  width: 20%;
+}
+
+
+.terms-selector {
+  position: absolute;
+  width: calc(90% - 3px);
+  border-radius: 0 0 25px 25px;
+  top: 47%;
+  padding: 20px 41px;
+  margin-left: 0;
+}
+
+

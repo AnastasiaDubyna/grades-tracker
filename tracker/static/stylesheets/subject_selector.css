@@ -1,0 +1,13 @@
+.subject-selector-container {
+  position: absolute;
+  top: 233px;
+  left: 66px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.content-container {
+  top: 328px;
+}
+
+/*# sourceMappingURL=subject_selector.css.map */

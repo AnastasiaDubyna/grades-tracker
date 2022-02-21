@@ -1,0 +1,31 @@
+{% extends "base_with_term_selector.html" %}
+
+{% block stylesheets %}
+{{ super() }}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/subject_selector.css') }}">
+{% endblock %}
+
+{% block term_selector %}
+{{ super() }}
+{% endblock %}}
+
+{% block add_new_button %}
+{{ super() }}
+{% endblock %}
+
+{% block subject_selector %}
+{% if subject_name %}
+<div class="subject-selector-container pointer" data-subject-name="{{subject_name}}">
+    <p id="subject-header">{{subject_name}}</p>
+    <div id="subject-selector-options" class="invisible"></div>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{url_for('static', filename='scripts/subjectSelector.js')}}"></script>
+{% endblock %}

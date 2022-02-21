@@ -1,0 +1,49 @@
+.content-container {
+  height: calc(100% - 243px - 87px);
+  top: 202px;
+  display: flex;
+}
+
+.form-container {
+  margin-top: 0;
+  opacity: 0;
+}
+.form-container .form-tile {
+  width: 80%;
+  padding: 37px;
+  height: auto;
+}
+
+#subjects-list-container {
+  text-align: center;
+  font-size: 26px;
+}
+#subjects-list-container p {
+  white-space: nowrap;
+}
+
+.all-inputs-container {
+  display: flex;
+  gap: 86px;
+}
+
+.input-container div input {
+  margin-top: 10px;
+}
+.input-container p {
+  font-size: 24px;
+}
+
+::placeholder {
+  opacity: 0.5;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.message-container {
+  margin-top: 20px;
+  font-size: 22px;
+  letter-spacing: 4px;
+}
+
+/*# sourceMappingURL=schedule_form.css.map */

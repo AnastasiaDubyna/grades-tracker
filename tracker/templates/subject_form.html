@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/subject_form.css') }}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+{% endblock %}
+
+{% block content %}
+    <form class="tile form-tile" data-edit="{{subject_data.name if subject_data}}">
+        <input name="subject-name" id="subject-name" placeholder="Subject name" value="{{subject_data.name if subject_data }}">
+        <input name="max-points" type="number" id="max-points" placeholder="Max points" value="{{subject_data.max_points if subject_data }}">
+        <input name="term" id="term-input" placeholder="Term" value="{{subject_data.term if subject_data }}" data-term-number="{{subject_data.term_number if subject_data }}" readonly>
+        <div class="terms-selector tile selector-tile invisible"></div>
+        <p>Grades</p>
+        <div class="grades-rates-container">
+            {% for i in range(30, 51, 5) %}
+            {% set mapper = {"30": "three_zero", "35": "three_half", "40": "four_zero", "45": "four_half", "50": "five_zero"} %}
+            <div class="percent-container">
+                <p>{{ i/10 }}</p>
+                <input name="{{i}}-grade" id="{{i}}-grade" class="grade-percent" value="{{subject_data.grade_rates[0][mapper[i|string]] if subject_data }}">
+                <p>%</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="checkboxes-container">
+            {% for item in ["exam", "project", "tasksheets"] %}
+            <div class="checkbox-container">
+                <div class="checkbox" id="{{item}}-checkbox">
+                    {% if (not subject_data) or subject_data.pass_req[0][item] %}
+                    <i class="fas fa-check"></i>
+                    {% endif %}
+                </div>
+                <p>{{item.title()}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="error-container"></div>
+    </form>
+    <div class="buttons-container">
+        <button class="orange-button" id="{{'edit-subject-btn' if subject_data else 'submit-new-subject-btn'}}">{{ "Edit" if subject_data else "Add" }}</button>
+        <button class="orange-button" id="cancel-new-subject-btn">Cancel</button>
+        {% if subject_data %}
+        <button class="orange-button" id="remove-subject-btn">Remove</button>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('static', filename='scripts/subjectForm.js')}}"></script>
+{% endblock %}

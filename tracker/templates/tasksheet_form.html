@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/tasksheet_form.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <form class="tile form-tile" data-subject-name="{{subject_name}}" data-tasksheet-number="{{tasksheet_data.number if tasksheet_data}}">
+        <input name="tasksheet-number" id="tasksheet-number" placeholder="Tasksheet number" value="{{tasksheet_data.number if tasksheet_data }}">
+        <input name="points_received" id="points_received" placeholder="Points" value="{{tasksheet_data.points if tasksheet_data }}">
+        <input name="points_max" id="points_max" placeholder="Points max" value="{{tasksheet_data.max_points if tasksheet_data }}">
+        <div class="error-container"></div>
+    </form>
+    <div class="buttons-container">
+        <button class="orange-button" id="{{'edit-tasksheet-btn' if tasksheet_data else 'submit-new-tasksheet-btn'}}">{{ "Edit" if tasksheet_data else "Add" }}</button>
+        <button class="orange-button" id="cancel-new-tasksheet-btn">Cancel</button>
+        {% if tasksheet_data %}
+        <button class="orange-button" id="remove-tasksheet-btn">Remove</button>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{url_for('static', filename='scripts/tasksheetForm.js')}}"></script>
+{% endblock %}

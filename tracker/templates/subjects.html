@@ -1,0 +1,51 @@
+{% extends "base_with_term_selector.html" %}
+
+{% block stylesheets %}
+    {{ super() }}
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='stylesheets/subjects.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+{% endblock %}
+
+{% block content %}
+{% if subjects %}
+    {% for subject in subjects %}
+        <div class="tile medium-tile subject-tile" data-subject="{{subject.name}}">
+            <p class="subject-name">{{subject.name.upper()}}</p>
+            <div class="scale-container">
+                {% set rates = subject.grade_rates[0] %}
+                {% set requirements = subject.pass_req[0] %}
+                {% for grade, db_key in {"3": "three_zero", "3.5": "three_half", "4": "four_zero", "4.5": "four_half", "5": "five_zero"}.items() %}
+                {% set position = "bottom" if (grade == "3.5" or grade == "4.5") else "top" %}
+                <div class="points-container {{position}}" id="point-{{db_key.replace('_', '-')}}" data-left="{{rates[db_key]}}">
+                    <p>{{(subject.max_points|int * (rates[db_key]|int / 100))|int}}p</p>
+                    <div class="divider"></div>
+                    <p>{{grade}}</p>
+                </div>
+                {% endfor %}
+                <div class="line-container" data-percent="{{subject.get_points_percent()}}">
+                    <div class="violet-scale-line"></div>
+                    <div class="yellow-scale-line"></div>
+                </div>
+            </div>
+            <div class="pink-tags-container">
+                {% for item in ["exam", "project", "tasksheets"] %}
+                {% if requirements[item] == True %}
+                <div class="pink-tag">
+                    <p>{{item.title()}}</p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+<div class="placeholder-container">
+    <p>No subjects here</p>
+</div>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{url_for('static', filename='scripts/subjects.js')}}"></script>
+{% endblock %}
